@@ -61,14 +61,16 @@ namespace PR_WPF
             var formData = new Order()
             {
                 CustomerName = CustomerName.Text,
-                CustomerName = CustomerName.Text,
-                CustomerName = CustomerName.Text,
-                CustomerName = CustomerName.Text,
-                CustomerName = CustomerName.Text,
-                CustomerName = CustomerName.Text,
-                CustomerName = CustomerName.Text,
-                CustomerName = CustomerName.Text,
-                CustomerName = CustomerName.Text,
+                CustomerAddress = CustomerAddress.Text,
+                ShippingAddress = ShippingAddress.Text,
+                ItemName = ItemName.Text,
+                UnitPrice = Convert.ToDecimal(UnitPrice.Text),
+                Quantity = int.Parse(Quantity.Text),
+                Discount = int.Parse(Discount.Text),
+                //TotalPrice = TotalPrice.Text,
+                OrderInvoiceNo = int.Parse(OrderInvoiceNo.Text),
+                OrderDateTime = Convert.ToDateTime(OrderDateTime),
+                ShippingDate = Convert.ToDateTime(ShippingDate)
             };
             httpClient.PostAsJsonAsync(baseAddress, this.order);
             MessageBox.Show("Confirm","Result");
